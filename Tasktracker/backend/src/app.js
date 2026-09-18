@@ -19,4 +19,11 @@ app.use('/api/auth',authRoutes);
 app.use('/api/task',taskRoutes);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+app.get("/", (req, res) => {
+    res.json({
+        message: "Task Tracker API is running",
+        documentation: "/api-docs"
+    });
+});
+
 module.exports=app;
